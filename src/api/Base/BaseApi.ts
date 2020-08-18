@@ -36,7 +36,7 @@ export class BaseApi {
    * @param uri 请求链接
    * @param params 参数
    */
-  protected static async get<T>(uri: string, params: object = {}, config?: object): Promise<IApiResult<T>> {
+  protected static async get<T>(uri: string, params: { [key: string]: any } = {}, config?: AxiosRequestConfig): Promise<IApiResult<T>> {
     return axios
       .get<IApiResult<T>>(uri, { params, ...config })
       .then(res => res.data)
@@ -56,7 +56,7 @@ export class BaseApi {
    * @param uri 请求链接
    * @param data 参数
    */
-  protected static async post<T>(uri: string, data: object = {}, config?: object): Promise<IApiResult<T>> {
+  protected static async post<T>(uri: string, data: { [key: string]: any } = {}, config?: AxiosRequestConfig): Promise<IApiResult<T>> {
     return axios
       .post<IApiResult<T>>(uri, data, config)
       .then(res => res.data)
@@ -76,7 +76,7 @@ export class BaseApi {
    * @param uri 请求链接
    * @param params 参数
    */
-  protected static async specialGet<T>(uri: string, params: object = {}, config?: object): Promise<T> {
+  protected static async specialGet<T>(uri: string, params: { [key: string]: any } = {}, config?: AxiosRequestConfig): Promise<T> {
     return axios
       .get<T>(uri, { params, ...config })
       .then(res => res.data);
@@ -87,7 +87,7 @@ export class BaseApi {
    * @param uri 请求链接
    * @param data 参数
    */
-  protected static async specialPost<T>(uri: string, data: object = {}, config?: object): Promise<T> {
+  protected static async specialPost<T>(uri: string, data: { [key: string]: any } = {}, config?: AxiosRequestConfig): Promise<T> {
     return axios.post<T>(uri, data, config).then(res => res.data);
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "utools-tmpl-web",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "utools vue 单页面应用",
   "author": "罗君 <13760614423@163.com>",
   "private": true,
@@ -14,6 +14,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "element-ui": "^2.13.2",
+    "encoding": "^0.1.13",
     "vue": "^2.6.10",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",

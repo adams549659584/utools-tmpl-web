@@ -1,3 +1,5 @@
+import json from 'rollup-plugin-json';
+import { version } from './package.json';
 import typescript from 'rollup-plugin-typescript';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
@@ -13,6 +15,7 @@ import { uglify } from 'rollup-plugin-uglify';
 const NODE_ENV = (process.env.NODE_ENV || 'development').trim();
 
 /** plugin.json */
+pluginConfig.version = version;
 const pluginJsonStr = JSON.stringify(pluginConfig);
 
 /** 生成preload.js */
@@ -22,7 +25,7 @@ const rollupOptions = {
   output: {
     file: './dist/preload.js',
     format: 'cjs',
-    sourcemap: NODE_ENV === 'production' ? 'hidden' : 'inline',
+    sourcemap: NODE_ENV === 'production' ? false : 'inline',
   },
   plugins: [
     typescript({ lib: ['es5', 'es6', 'dom'], target: 'es5' }),

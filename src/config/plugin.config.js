@@ -3,7 +3,7 @@
  */
 const pluginConfig = {
   pluginName: 'utools-tmpl-web',
-  version: 'v1.0.0',
+  // version: 'v1.0.0',
   description: 'utools 单页面应用模板',
   author: '罗君',
   homepage: 'https://github.com/adams549659584/utools-tmpl-web',
